@@ -117,8 +117,7 @@ __Возвращаемое значение__
 
 #### Для отправки сообщения от мастера к рабочему
 ```C
-typedef struct MasterToWorkerActualInfo
-{
+typedef struct MasterToWorkerActualInfo {
     SizeData index_row;
     SizeData index_column;
 
@@ -126,8 +125,7 @@ typedef struct MasterToWorkerActualInfo
     Array column_array;
 } MasterToWorkerActualInfo;
 
-typedef struct MasterToWorkerMsgInfo
-{
+typedef struct MasterToWorkerMsgInfo {
     long mType;
     MasterToWorkerActualInfo info;
 } MasterToWorkerMsgInfo;
@@ -135,16 +133,16 @@ typedef struct MasterToWorkerMsgInfo
 
 #### Для отправки сообщения от рабочего к мастеру
 ``` C
-typedef struct WorkerToMasterActualInfo
-{
+#define MAX_LEN_WORKER_NAME 100
+
+typedef struct WorkerToMasterActualInfo {
     char worker_name[MAX_LEN_WORKER_NAME];
     SizeData index_row;
     SizeData index_column;
     int32_t value;
 } WorkerToMasterActualInfo;
 
-typedef struct WorkerToMasterMsgInfo
-{
+typedef struct WorkerToMasterMsgInfo {
     long mType;
     WorkerToMasterActualInfo info;
 } WorkerToMasterMsgInfo;
