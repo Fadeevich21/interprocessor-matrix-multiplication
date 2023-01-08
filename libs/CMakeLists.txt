@@ -1,0 +1,5 @@
+add_subdirectory(array)
+add_subdirectory(matrix)
+add_subdirectory(color_print)
+add_subdirectory(messages_to_console)
+add_subdirectory(message)
